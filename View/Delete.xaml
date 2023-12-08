@@ -1,0 +1,83 @@
+﻿<Window
+    x:Class="ProjetAnnuaire.View.Delete"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:fa5="http://schemas.fontawesome.com/icons/"
+    xmlns:local="clr-namespace:ProjetAnnuaire.View"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Delete"
+    Width="200"
+    Height="200"
+    mc:Ignorable="d">
+    <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="10" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <TextBlock
+            Name="LabelContent"
+            Grid.Row="0"
+            Grid.Column="1"
+            Width="150"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Text=""
+            TextAlignment="Center" />
+        <ComboBox
+            Name="ServiceComboBox"
+            Grid.Row="1"
+            Grid.Column="1"
+            Width="150"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            DisplayMemberPath="Service"
+            FontSize="10"
+            ItemsSource="{Binding ServicesList, Mode=TwoWay}"
+            SelectedItem="{Binding SelectedService, Mode=TwoWay}"
+            Visibility="Collapsed" />
+        <ComboBox
+            Name="SiteComboBox"
+            Grid.Row="1"
+            Grid.Column="1"
+            Width="150"
+            Margin="10"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            DisplayMemberPath="City"
+            FontSize="10"
+            ItemsSource="{Binding SitesList, Mode=TwoWay}"
+            SelectedItem="{Binding SelectedSite, Mode=TwoWay}"
+            Visibility="Collapsed" />
+        <StackPanel
+            Grid.Row="2"
+            Grid.Column="1"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center">
+            <Button
+                Width="50"
+                Background="DarkSlateGray"
+                Click="Add_Click">
+                <fa5:FontAwesome Foreground="White" Icon="Solid_Plus" />
+            </Button>
+        </StackPanel>
+        <StackPanel
+            Grid.Row="2"
+            Grid.Column="1"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center">
+            <Button
+                Width="50"
+                Background="DarkSlateGray"
+                Click="Cancel_Click">
+                <fa5:FontAwesome Foreground="White" Icon="Solid_ChevronCircleLeft" />
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>
